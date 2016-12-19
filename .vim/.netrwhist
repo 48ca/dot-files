@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/james/mm/django/.git'
-let g:netrw_dirhist_2='/home/james/mm/django/mirrormirror/static/rtc'
-let g:netrw_dirhist_3='/home/james/mm/django/mirrormirror/static'
-let g:netrw_dirhist_4='/home/james/mm/django/mirrormirror/static/rtc'
-let g:netrw_dirhist_5='/home/james/.ssh'
-let g:netrw_dirhist_6='/home/james/messenger/.git'
-let g:netrw_dirhist_7='/home/james/.urxvt'
-let g:netrw_dirhist_8='/home/james/.ncmpcpp'
-let g:netrw_dirhist_9='/home/james/.mplayer'
