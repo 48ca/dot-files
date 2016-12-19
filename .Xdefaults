@@ -1,0 +1,42 @@
+xterm*background: #050505
+xterm*foreground: white
+xterm*faceName: DejaVu Sans Mono:style=Book:size=12:antialias=true
+xterm*faceSize: 12
+xterm*font: 7x13
+
+urxvt*background: #0A0909
+urxvt*cursorBlink:     true
+urxvt*cursorUnderline: true
+urxvt*font:            xft:Fantasque Sans:size=12
+urxvt*boldFont:        xft:Fantasque Sans:size=12:bold
+urxvt*scrollBar:       false
+urxvt.perl-ext-common: default,matcher
+urxvt.url-launcher:    chromium
+urxvt.matcher.button:  1
+urxvt.internalBorder:  0
+urxvt.lineSpace:       1
+urxvt.letterSpace:     -3
+
+*.foreground: #ccb18b
+*.cursorcolor:#ccb18b
+*.colorbd:    #6699cc
+*.colorul:    #ccb18b
+*.colorit:    #ccb18b
+#*background:  #2d2d31
+*.background:  #000000
+*color0:      #1a1a1a
+*color1:      #cc6666
+*color2:      #66aa66
+*color3:      #f0c674
+*color4:      #557799
+*color5:      #a374a8
+*color6:      #339999
+*color7:      #a3a3a3
+*color8:      #4d4d4d
+*color9:      #dd7777
+*color10:     #77bb77
+*color11:     #f2d785
+*color12:     #5588bb
+*color13:     #b485b9
+*color14:     #2fa7a7
+*color15:     #cccccc
