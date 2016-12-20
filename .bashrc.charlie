@@ -1,0 +1,54 @@
+# ~/.bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+# Put your fun stuff here.
+eval `dircolors ~/.i3/dircolors.256dark`
+
+# Perl
+PATH="/home/james/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/james/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/james/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/james/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/james/perl5"; export PERL_MM_OPT;
+
+# git
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+export PS1='$(__git_ps1 "\[\e[00;38;5;33m\](\[\e[0;33m\]%s\[\e[00;38;5;33m\])\[\e[m\] ")'$PS1
+
+# heroku
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Virtualenv/Pip config
+export VIRTUALENV_DISTRIBUTE=true
+export PIP_VIRTUALENV_BASE=/usr/local/virtualenvs
+export WORKON_HOME=/usr/local/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export PIP_DOWNLOAD_CACHE=/usr/local/virtualenvs/cache
+source /usr/bin/virtualenvwrapper.sh
+
+shopt -s checkwinsize
+
+# Go
+export GOROOT=$HOME/go
+export GOARCH=amd64
+export GOOS=linux
+export GOBIN=$GOROOT/bin
+
+# pastebin
+alias pb="curl -F c=@- https://ptpb.pw < $@"
+
+# GPG
+export GPG_TTY=`tty`
