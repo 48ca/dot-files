@@ -19,7 +19,6 @@ do
 	then
 		diff --color $DESTDIR/$f $f && continue
 		echo "$DESTDIR/$f already exists"
-		echo -e $res
 		echo -n "Replace? [y/N] "
 		read y
 		case $y in
