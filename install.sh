@@ -17,7 +17,7 @@ for f in $(find -type f -not -iname "README.md" -not -iname "install.sh" -not -i
 do
 	if [ -f $DESTDIR/$f ]
 	then
-		diff --color $f $DESTDIR/$f && continue
+		diff --color $DESTDIR/$f $f && continue
 		echo "$DESTDIR/$f already exists"
 		echo -e $res
 		echo -n "Replace? [y/N] "
