@@ -2,7 +2,7 @@
 
 pushd > /dev/null $(dirname ${BASH_SOURCE[0]})
 
-DESTDIR="$HOME/dest"
+DESTDIR="$HOME"
 
 if ! [ -d $DESTDIR ]; then mkdir $DESTDIR; fi
 
@@ -36,5 +36,11 @@ do
 		cp $f $DESTDIR/$f
 	fi
 done
+
+if ! [ -f $DESTDIR/.weechat/ecdsa.pem ]
+then
+	echo "Decrypting ecdsa.pem for Weechat Freenode SASL authentication"
+	gpg -o $DESTDIR/.weechat/ecdsa.pem -d $DESTDIR/.weechat/ecdsa.pem.asc
+fi
 
 popd > /dev/null
