@@ -2,7 +2,7 @@
 
 pushd > /dev/null $(dirname ${BASH_SOURCE[0]})
 
-DESTDIR="$HOME"
+DESTDIR="$HOME/dest"
 
 if ! [ -d $DESTDIR ]; then mkdir $DESTDIR; fi
 
@@ -13,12 +13,11 @@ do
 	mkdir "$DESTDIR/$d"
 done
 
-for f in $(find -type f -not -iname "install.sh" -not -iwholename "*.git/*" )
+for f in $(find -type f -not -iname "README.md" -not -iname "install.sh" -not -iwholename "*.git/*" )
 do
 	if [ -f $DESTDIR/$f ]
 	then
-		diff --color $f $DESTDIR/$f >/dev/null && continue
-		if $?; then continue; fi # | cat # sed -i '1s|^|'$DESTDIR/$f'already exists|'
+		diff --color $f $DESTDIR/$f && continue
 		echo "$DESTDIR/$f already exists"
 		echo -e $res
 		echo -n "Replace? [y/N] "
