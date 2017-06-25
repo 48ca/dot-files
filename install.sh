@@ -2,7 +2,14 @@
 
 pushd > /dev/null $(dirname ${BASH_SOURCE[0]})
 
-DESTDIR="$HOME"
+if [ -z "$1" ]
+then
+	DESTDIR="$HOME"
+else
+	DESTDIR="$1"
+fi
+
+echo "Installing files to $DESTDIR"
 
 if ! [ -d $DESTDIR ]; then mkdir $DESTDIR; fi
 
