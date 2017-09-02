@@ -27,3 +27,32 @@ export VIRTUALENVWRAPPER_PYTHON=/home/james/venv/bin/python
 source /usr/bin/virtualenvwrapper.sh
 
 export VISUAL="vim"
+export EDITOR="vim"
+
+alias weather="curl wttr.in"
+
+alias sd="shutdown now"
+
+alias setclip='xclip -selection c'
+alias getclip='xclip -selection clipboard -o'
+
+alias chrome="google-chrome-stable"
+
+if [ -f $HOME/messages.txt ]
+then
+	messages=$(cat $HOME/messages.txt | sed 's/^#.*$//g')
+	if ! [ -z "$messages" ]
+	then
+		echo " == Messages: == "
+		echo $messages
+	else
+		echo "No messages in messages.txt"
+	fi
+fi
+
+alias fbm="node $HOME/node_modules/fb-messenger-cli/cli.js"
+alias messeenger="fbm"
+
+alias compile=". ~/uva/env.sh && compile"
+
+alias vim="nvim"
