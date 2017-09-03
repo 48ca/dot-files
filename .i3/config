@@ -204,7 +204,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-150
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-80
 
 bindsym --release Print exec --no-startup-id scrot "%Y-%m-%d_$(whoami).png' -t 10% -e 'feh -. $f"
 
