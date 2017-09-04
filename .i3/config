@@ -169,10 +169,10 @@ bindsym $mod+r mode "resize"
 # 	status_command i3status
 # 	position top
 # }
-bar {
-	status_command bumblebee-status -m pasink pasource battery nic pacman disk datetime -p disk.path=/home datetime.format="%a, %b %d, %Y at %I:%M %p" -t solarized-powerline
-	position top
-}
+# bar {
+# 	status_command bumblebee-status -m pasink pasource battery nic pacman disk datetime -p disk.path=/home datetime.format="%a, %b %d, %Y at %I:%M %p" -t solarized-powerline
+# 	position top
+# }
 bindcode 95 exec xbacklight -dec 10
 bindcode 96 exec xbacklight -inc 10
 
@@ -181,7 +181,7 @@ exec xrandr --dpi 110
 gaps inner 20
 gaps outer 30
 
-exec feh --bg-scale ~/.i3/arc-dark-splash.png
+exec feh --bg-scale ~/.i3/background.png
 
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
@@ -223,3 +223,5 @@ exec --no-startup-id xrdb ~/.Xresources
 # exec --no-startup-id xcompmgr -c # -C -t-5 -l-5 -r4.2 -o.55
 
 exec --no-startup-id xautolock -locker "i3lock -i ~/.i3/lock-screen.png" -time 5
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
