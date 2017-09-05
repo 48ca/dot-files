@@ -50,8 +50,8 @@ font-0 = mono:pixelsize=16;1
 font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-2 = siji:pixelsize=16;1
 
-modules-left = i3 spotify
-#modules-center = mpd
+modules-left = i3 spotify mpd
+# modules-center = mpd
 modules-right = home filesystem volume wlan eth battery cpu memory date powermenu
 
 tray-position = right
@@ -218,7 +218,6 @@ label = CPU %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %gb_free% free
@@ -319,11 +318,11 @@ format-charging = Charging... <label-charging>
 #format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <label-discharging> 
+format-discharging = BAT: <label-discharging>
 #format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "BAT: "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
