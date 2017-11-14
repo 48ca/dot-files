@@ -48,7 +48,8 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+l exec notify-send "Locking..." && xautolock -locknow
+bindsym $mod+l exec notify-send "Locking..." && xautolock -locknow && sleep 1 && xset dpms force off
+bindsym $mod+shift+s exec notify-send "Suspending..." && xautolock -locknow && systemctl suspend
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -222,6 +223,6 @@ exec --no-startup-id xrdb ~/.Xresources
 # exec --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 # exec --no-startup-id xcompmgr -c # -C -t-5 -l-5 -r4.2 -o.55
 
-exec --no-startup-id xautolock -locker "i3lock -i ~/.i3/lock-screen.png" -time 5
+exec --no-startup-id xautolock -locker "i3lock -i ~/.i3/lock-screen.png" -time 15
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
