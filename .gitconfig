@@ -1,0 +1,5 @@
+[user]
+	email = jamesthoughton@gmail.com
+	name = James Houghton
+[alias]
+	logg = log --decorate --oneline --graph --abbrev-commit --all
