@@ -52,7 +52,7 @@ font-2 = siji:pixelsize=16;1
 
 modules-left = i3 spotify mpd
 # modules-center = mpd
-modules-right = home filesystem volume wlan eth battery cpu memory date powermenu
+modules-right = home filesystem volume xbacklight wlan eth battery cpu memory date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -313,7 +313,7 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = Charging... <label-charging>
+format-charging = BAT: <label-charging>
 #format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
@@ -322,7 +322,7 @@ format-discharging = BAT: <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = "BAT: "
-format-full-prefix-foreground = ${colors.foreground-alt}
+#format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
