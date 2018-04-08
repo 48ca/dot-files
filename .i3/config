@@ -48,8 +48,8 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+l exec notify-send "Locking..." && xautolock -locknow && sleep 1 && xset dpms force off
-bindsym $mod+shift+s exec notify-send "Suspending..." && xautolock -locknow && systemctl suspend
+bindsym $mod+l exec notify-send "Locking..." && xautolock -enable && xautolock -locknow && sleep 1 && xset dpms force off
+bindsym $mod+shift+s exec notify-send "Suspending..." && xautolock -enable && xautolock -locknow && systemctl suspend
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -215,12 +215,14 @@ bindsym --release Print exec --no-startup-id scrot "%Y-%m-%d_$(whoami).png' -t 1
 exec --no-startup-id urxvtd -q -f -o &
 
 exec --no-startup-id dunst -c ~/.config/dunst/dunstrc
+# exec --no-startup-id twmnd
 
 exec --no-startup-id udiskie
 
 exec --no-startup-id xrdb ~/.Xresources
 
-# exec --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+exec --no-startup-id compton -CGfF -o 0.38 -O 0.05 -t 0 -l 0 -r 3 -D2 -m 0.88
+# exec --no-startup-id compton
 # exec --no-startup-id xcompmgr -c # -C -t-5 -l-5 -r4.2 -o.55
 
 exec --no-startup-id xautolock -locker "i3lock -i ~/.i3/lock-screen.png" -time 15
