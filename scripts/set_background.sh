@@ -15,7 +15,7 @@ TMP=/tmp/screen.png
 LOCK=lock.png
 
 echo "Resizing..."
-convert $INPUT -resize $RES^ -gravity center $TMP
+convert $INPUT -resize $RES^ -gravity center -crop $RES+0+0 +repage $TMP
 
 cp $TMP ~/.i3/background.png
 
