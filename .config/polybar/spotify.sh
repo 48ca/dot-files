@@ -23,12 +23,14 @@ main() {
   meta=$(dbus-send --print-reply --dest=${domain}.spotify \
     /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:${domain}.Player string:Metadata)
 
+  paused=$(if [ $(playerctl status) = "Paused" ]; then echo " (Paused)"; fi)
+
   artist=$(echo "$meta" | sed -nr '/xesam:artist"/,+2s/^ +string "(.*)"$/\1/p' | tail -1 | sed 's/\//\\\//g;s/\&/\\&/g')
   album=$(echo "$meta" | sed -nr '/xesam:album"/,+2s/^ +variant +string "(.*)"$/\1/p' | tail -1 | sed 's/\//\\\//g;s/\&/\\&/g')
   titlelong=$(echo "$meta" | sed -nr '/xesam:title"/,+2s/^ +variant +string "(.*)"$/\1/p' | tail -1 | sed 's/\//\\\//g;s/\&/\\&/g')
   title=$(trim $titlelong)
 
-  echo "${*:-%artist% - %title%}" | sed "s/%artist%/$artist/g;s/%title%/$title/g;s/%album%/$album/g"i | grep -vi "error" | grep -v "xesam"
+  echo "${*:-%artist% - %title%} $paused" | sed "s/%artist%/$artist/g;s/%title%/$title/g;s/%album%/$album/g"i | grep -vi "error" | grep -v "xesam"
 }
 
 main "$@"

@@ -175,7 +175,7 @@ icon-prev = <-
 icon-stop = X
 icon-play-prefix = #f00
 icon-play = (Paused)
-icon-pause = 
+icon-pause =
 icon-next = ->
 
 ;bar-progress-width = 45
@@ -398,4 +398,4 @@ margin-bottom = 5
 type = custom/script
 exec = ~/.config/polybar/spotify.sh %artist% - %title%
 tail = true
-interval = 2
+interval = 1
