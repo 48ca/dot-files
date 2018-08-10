@@ -31,14 +31,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvtc
-bindsym $mod+Shift+Return exec xterm -fa 'Monospace' -fs 14
+bindsym $mod+Shift+Return exec urxvtc -cd  `xdotool getactivewindow getwindowname | cut -d ":" -f 2 | sed -e 's@~@'"$HOME"'@'`
 bindsym $mod+c exec google-chrome-stable --force-device-scale-factor=2.0
 bindsym $mod+s exec spotify --force-device-scale-factor=1.5
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec ~/scripts/dmenu.sh
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -46,8 +46,8 @@ bindsym $mod+d exec ~/scripts/dmenu.sh
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+l exec notify-send "Locking..." && xautolock -enable && xautolock -locknow && sleep 1 && xset dpms force off
-bindsym $mod+shift+s exec notify-send "Suspending..." && xautolock -enable && xautolock -locknow && systemctl suspend
+bindsym $mod+l exec notify-send -a "System" "Locking..." && xautolock -enable && xautolock -locknow && sleep 1 && xset dpms force off
+bindsym $mod+shift+s exec notify-send -a "System" "Suspending..." && xautolock -enable && xautolock -locknow && systemctl suspend
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -183,7 +183,7 @@ gaps outer 30
 exec feh --bg-scale ~/.i3/background.png
 
 set $bg-color            #383C4A
-set $bd-color            #5452DD
+set $bd-color            #6452DD
 set $inactive-bg-color   #383C4A
 set $inactive-bd-color   #383C4A
 set $text-color          #f3f4f5
@@ -221,8 +221,6 @@ exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelt
 # bindsym --release Print exec --no-startup-id scrot "~/Pictures/%Y-%m-%d.png' -t 10% -e 'notify-send \'Saved image as $f\'"
 bindsym --release Print exec ~/scripts/scrot.sh
 
-# exec --no-startup-id compton -bc &
-
 # Daemonize the rbvt-unicode terminal emulator.
 exec --no-startup-id urxvtd -q -f -o &
 
@@ -233,8 +231,8 @@ exec --no-startup-id udiskie
 
 exec --no-startup-id xrdb ~/.Xresources
 
-exec --no-startup-id compton -CGfF -o 0.38 -O 0.05 -t 0 -l 0 -r 3 -D2 -m 0.88
-# exec --no-startup-id compton
+# exec --no-startup-id compton -CGfF -o 0.38 -O 0.05 -t 0 -l 0 -r 3 -D2 -m 0.88
+exec --no-startup-id compton
 # exec --no-startup-id xcompmgr -c # -C -t-5 -l-5 -r4.2 -o.55
 
 exec --no-startup-id xautolock -locker "i3lock -i ~/.i3/lock-screen.png" -time 15
