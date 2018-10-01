@@ -47,7 +47,7 @@ bindsym $mod+d exec ~/scripts/dmenu.sh
 
 # change focus
 bindsym $mod+l exec notify-send -a "System" "Locking..." && xautolock -enable && xautolock -locknow && sleep 1 && xset dpms force off
-bindsym $mod+shift+s exec notify-send -a "System" "Suspending..." && xautolock -enable && xautolock -locknow && systemctl suspend
+bindsym $mod+shift+s exec notify-send -a "System" "Suspending..." && xautolock -enable && xautolock -locknow && sleep 1 && systemctl suspend
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
