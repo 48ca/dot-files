@@ -28,6 +28,7 @@ copy .git-completion.bash
 copy .gitconfig
 copy .git-prompt.sh
 
+set +e
 which nvim > /dev/null
 if [ $? -ne 0 ]
 then
