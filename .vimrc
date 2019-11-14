@@ -26,6 +26,7 @@ set number
 set tabstop=4
 set expandtab
 set shiftwidth=4
+colorscheme elflord
 " colorscheme darkblue
 au BufNewFile,BufRead *.ejs set filetype=html
 set noautoindent

@@ -27,3 +27,10 @@ copy .inputrc
 copy .git-completion.bash
 copy .gitconfig
 copy .git-prompt.sh
+
+which nvim > /dev/null
+if [ $? -ne 0 ]
+then
+    echo "neovim not installed. Updating .bashrc..."
+    sed -i 's/\<nvim\>/vim/g' ~/.bashrc
+fi
