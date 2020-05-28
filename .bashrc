@@ -41,4 +41,6 @@ fi
 
 alias vim="nvim"
 
+alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true pass"
+
 set -o vi
