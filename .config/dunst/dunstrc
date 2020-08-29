@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 10
+    font = Monospace 12
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -63,7 +63,7 @@
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 20
+    transparency = 15
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -115,7 +115,13 @@
     # print a notification on startup
     # This is mainly for error detection, since dbus (re-)starts dunst
     # automatically after a crash.
-    startup_notification = true
+    startup_notification = false
+
+    # Align icons left/right/off
+    icon_position = off
+
+    # Paths to default icons.
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/hicolor/16x16/apps/
 
     # dmenu path
     dmenu = /usr/bin/dmenu -p dunst:
@@ -149,11 +155,11 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
+    foreground = "#aaaaaa"
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
+    background = "#6452dd"
     foreground = "#ffffff"
     timeout = 10
 
@@ -214,6 +220,10 @@
     appname = Amarok
     summary = "Now playing"
     urgency = low
+
+[spotify]
+    appname = *Spotify*
+    new_icon = spotify
 
 #[twitter]
 #    appname = Pidgin
