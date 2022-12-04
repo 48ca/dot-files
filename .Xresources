@@ -27,14 +27,18 @@ URxvt.saveLines:            20000
 URxvt.internalBorder:       20
 URxvt.lineSpace:            0
 
+! change this to 28 for non-scaled
+*font: xft:Comic Code,Noto Sans CJK:pixelsize=18
+*boldFont: xft:Comic Code,Noto Sans CJK:pixelsize=18
+
 ! Fonts
 URxvt.allow_bold:           false
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:Monospace:pixelsize=24
-URxvt*font: xft:Monospace:pixelsize=24
+URxvt*font: xft:Comic Code,Noto Sans CJK:pixelsize=18
 ! URxvt*font: xft:Liberation Mono:pixelsize=24
 ! URxvt*font: xft:FreeMono:pixelsize=24
-URxvt*boldFont: xft:Monospace:pixelsize=24
+URxvt*boldFont: xft:Comic Code,Noto Sans CJK:pixelsize=18
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -103,3 +107,6 @@ URxvt.pointerBlank:         true
 ! white
 *.color7:       #acada1
 *.color15:      #cfd0c2
+
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
